@@ -35,6 +35,22 @@ void printPlayerData(const Player& player)
 	cout << "zycie : " << player.health << endl << endl;
 }
 
+void printMonsterData(const Monster * monster)
+{
+	cout << "potwor : " << (*monster).name << endl;
+	cout << "typ : " << getTypeName((*monster)) << endl;
+	cout << "atak : " << (*monster).attack << endl;
+	cout << "zycie : " << (*monster).health << endl << endl;
+}
+
+
+void printPlayerData(const Player * player)
+{
+	cout << "Gracz : " << (*player).name << endl;
+	cout << "magic : " << (*player).magic << endl;
+	cout << "atak : " << (*player).attack << endl;
+	cout << "zycie : " << (*player).health << endl << endl;
+}
 
 Monster *createMonster(string name, MonsterType type, int  attack, double  health) {
 	Monster *m = new Monster();
@@ -62,7 +78,8 @@ Player *createPlayer(string name, int magic, int  attack, double  health) {
 
 int randomNumber(int min, int max)
 {
-	return rand() % (max - min) + min;
+	min--;
+	return rand() % (max - (min)) + min + 1;
 }
 
 
@@ -97,11 +114,14 @@ int main(int argc, char* argv[])
 	printMonsterData(Smok);
 	printPlayerData(Gracz);
 
+	printMonsterData(&Smok);
+	printPlayerData(&Gracz);
 	///tablica monsterow
 	//9-10
-	const int N = 100;
+	int N;
+	cin >> N;
 
-	Monster Random[N];
+	Monster * Random = new Monster[N];
 
 	for (int i = 0; i < N; i++)
 	{
