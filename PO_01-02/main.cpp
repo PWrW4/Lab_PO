@@ -1,113 +1,50 @@
-﻿#include "headerFile.h"
-//todo Loczba użytkownika i przsłonieta metoda
+﻿#include "mymath.h"
 
-string getTypeName(const Monster& monster)
+
+
+void readNumber(int &i)
 {
-	switch (monster.monsteType)
+	cout << "Podaj liczbe:" << endl;
+	cin >> i;
+}
+
+bool isPrime(int i)
+{
+	if (i == 2)
 	{
-	case MonsterType::Dragon :
-		return  "Dragon";
-		break;
-	case MonsterType::Ghost:
-		return  "Ghost";
-		break;
-	default:
-		return "error1";
-		break;
+		return true;
 	}
-}
 
-void printMonsterData(const Monster& monster)
-{
-	cout << "potwor : " << monster.name << endl;
-	cout << "typ : " << getTypeName(monster) << endl;
-	cout << "atak : " << monster.attack <<endl;
-	cout << "zycie : " << monster.health << endl << endl;
-}
-
-void printPlayerData(const Player& player)
-{
-	cout << "Gracz : " << player.name << endl;
-	cout << "magic : " << player.magic << endl;
-	cout << "atak : " << player.attack << endl;
-	cout << "zycie : " << player.health << endl << endl;
-}
-
-Monster *createMonster(string name, MonsterType type, int  attack, double  health) {
-	Monster *m = new Monster();
-	
-	(*m).name = name;
-	(*m).monsteType = type;
-	(*m).attack = attack;
-	(*m).health = health;
-
-	return m;
-}
-
-Player *createPlayer(string name, int magic, int  attack, double  health) {
-	Player *p = new Player();
-
-	(*p).name = name;
-	(*p).magic = magic;
-	(*p).attack = attack;
-	(*p).health = health;
-
-	return p;
-}
-
-int randomNumber(int min, int max)
-{
-	return rand() % (max-min) + min;
-}
-
-MonsterType randMonsterType()
-{
-	if (randomNumber(0,1))
+	for (int dzielnik = 3; dzielnik<i; dzielnik++)
 	{
-		return MonsterType::Dragon;
+		if (i%dzielnik == 0)
+		{
+			return false;
+		}
 	}
-	else { 
-		return MonsterType::Ghost;
-	}
-}
-
-Monster *createRandomMonster(string name)
-{
-	return createMonster(name, randMonsterType(), randomNumber(5, 20), randomNumber(10, 30));
+	return true;
 }
 
 int main(int argc, char* argv[])
 {
-	//rand init
-	srand(static_cast <unsigned int >(time(nullptr)));
+	int _number;
 
-
-	//1-8
-	Monster Smok = *createMonster("Tomek",MonsterType::Dragon,30,30);
-	
-	Player Gracz = *createPlayer("Pawel", 30, 30, 100);
-
-	printMonsterData(Smok);
-	printPlayerData(Gracz);
-	
-	///tablica monsterow
-	//9-10
-	const int N = 100;
-	
-
-	Monster Random[N];
-	
-	for (int i=0;i<N;i++)
+	readNumber(_number);
+	if (isPrime(_number))
 	{
-		Random[i] = *createRandomMonster("random");
-		printMonsterData(Random[i]);
+		cout << "yep, it is prime" << endl;
 	}
 
-	
+	primeNumbers(_number);
 
-	
+	factorial(_number);
 
-	int aasdasd;
-	cin >> aasdasd;
+	cout << silnia(_number) << endl;
+
+	cout << "FibonaciFnc: " << fibonaci(_number) << endl;
+
+	cout << "FibFcn " << fib(_number) << endl;
+
+	cin >> _number;
 	return 0;
 }
