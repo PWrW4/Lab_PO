@@ -1,10 +1,67 @@
 ﻿#include "Player.h"
 
+int Player::numberOf = 0;
 
-Player::Monster(string name, MonsterType type, int attack, double health)
+Player::Player()
 {
+	numberOf++;
+}
+
+Player::~Player()
+{
+	numberOf--;
+}
+
+int Player::get_attack() const
+{
+	return attack;
+}
+
+double Player::get_health() const
+{
+	return health;
+}
+
+string Player::get_name() const
+{
+	return name;
+}
+
+int Player::get_magic() const
+{
+	return magic;
+}
+
+void Player::set_attack(int a)
+{
+	attack = a;
+}
+
+void Player::set_health(double h)
+{
+	health = h;
+}
+
+void Player::set_name(string n)
+{
+	name = n;
+}
+
+
+void Player::set_magic(int m)
+{
+	magic = m;
+}
+
+
+
+
+Player::Player(string name, int magic, int attack, double health)
+{
+	numberOf++;
+
 	Player::name = name;
-	Player::monsteType = type;
+	Player::magic = magic;
 	Player::attack = attack;
 	Player::health = health;
 }
@@ -17,3 +74,11 @@ void Player::print(const Player& player)
 	cout << "atak : " << player.attack << endl;
 	cout << "zycie : " << player.health << endl << endl;
 }
+
+int Player::printNumberOfPlayers()
+{
+	return Player::numberOf;
+
+}
+
+

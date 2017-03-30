@@ -10,11 +10,11 @@ Potion::Potion(const Potion &other)
 	name = other.name;
 }
 
- std::ostream& operator<<(std::ostream out, const Potion& potion)
+ /*std::ostream& operator<<(std::ostream out, const Potion& potion)
 {
 	out << potion.getName();
 	return out;
-}
+}*/
 
 
 const std::string Potion::getName() const

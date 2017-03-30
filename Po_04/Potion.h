@@ -1,19 +1,17 @@
 #pragma once
-#include <string>
+#include "Header.h"
 
 class Potion
 {
 	std::string name;
 
 public:
-	Potion(const std::string &name);
+	Potion(const string &name);
 
 	Potion(const Potion &other);
 
-//	friend std::ostream &operator<<(std::ostream out, const Potion &potion);
-
-	const std::string getName() const;
+	const string getName() const;
 };
 
-std::ostream &operator<<(std::ostream out, const Potion &potion);
+//std::ostream &operator<<(std::ostream out, const Potion &potion);
 
