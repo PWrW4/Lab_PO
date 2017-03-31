@@ -5,6 +5,11 @@ Potion::Potion(const std::string &name) :name(name)
 	
 }
 
+Potion::~Potion()
+{
+
+}
+
 Potion::Potion(const Potion &other)
 {
 	name = other.name;
