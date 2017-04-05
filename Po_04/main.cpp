@@ -10,6 +10,8 @@ int main(int argc, char* argv[])
 	cout << Mons->printNumberOfMonsters() << endl;
 	delete Mons;
 	cout << Monster::printNumberOfMonsters() << endl;
+	
+	
 	cout << Player::printNumberOfPlayers() << endl;
 	Player * Play = new Player("asd",10, 100, 50);
 	cout << Play->printNumberOfPlayers() << endl;	

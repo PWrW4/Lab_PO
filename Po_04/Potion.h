@@ -3,10 +3,12 @@
 
 class Potion
 {
-	std::string name;
+	string name;
 
 public:
 	Potion(const string &name);
+
+	~Potion();
 
 	Potion(const Potion &other);
 
