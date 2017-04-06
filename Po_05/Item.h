@@ -6,9 +6,9 @@ class Item
 	string name;
 	bool equiped;
 public:
-	Item(const std::string &);
+	Item(const string &);
 
 	Item(const Item &);
 
-	const string getName() const;
+	virtual const string getName() const;
 };

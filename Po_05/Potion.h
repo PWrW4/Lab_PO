@@ -1,7 +1,7 @@
 #pragma once
 #include "Header.h"
 
-class Potion
+ class Potion
 {
 	string name;
 
@@ -12,7 +12,7 @@ public:
 
 	Potion(const Potion &other);
 
-	const string getName() const;
+	virtual const string getName() const;
 
 	virtual void printPotionType();
 };

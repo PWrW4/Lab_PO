@@ -10,7 +10,7 @@ Item::Item(const Item &other)
 	name = other.name;
 }
 
-const std::string Item::getName() const
+ const string Item::getName() const
 {
 	return name;
 }

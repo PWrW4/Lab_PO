@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Potion.h"
 
-class HealthPotion : public Potion
+class HealthPotion : virtual public Potion
 {
 	int power;
 
