@@ -3,12 +3,12 @@
 
 Potion::Potion(const std::string &name) :name(name)
 {
-	
+	cout << "Potion::Potion(const std::string &name) :name(name)" << endl;
 }
 
 Potion::~Potion()
 {
-	
+	cout << "~Potion" << endl;
 }
 
 

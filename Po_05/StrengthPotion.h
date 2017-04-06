@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Potion.h"
 
-class StrengthPotion : Potion
+class StrengthPotion : public Potion
 {
 	int usageTime;
 

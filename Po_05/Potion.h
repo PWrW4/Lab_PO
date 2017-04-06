@@ -8,13 +8,13 @@ class Potion
 public:
 	Potion(const string &name);
 
-	~Potion();
+	virtual ~Potion();
 
 	Potion(const Potion &other);
 
 	const string getName() const;
 
-	void printPotionType();
+	virtual void printPotionType();
 };
 
 //std::ostream &operator<<(std::ostream out, const Potion &potion);

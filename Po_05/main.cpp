@@ -1,20 +1,44 @@
 #include "Header.h"
 #include "Player.h"
 #include "Monster.h"
+#include "StrengthPotion.h"
+#include "HealthPotion.h"
 
 
 int main(int argc, char* argv[])
 {
-	cout << Monster::printNumberOfMonsters() << endl;
-	Monster * Mons = new Monster("kuba", MonsterType::Dragon, 100, 50);
-	cout << Mons->printNumberOfMonsters() << endl;
-	delete Mons;
-	cout << Monster::printNumberOfMonsters() << endl;
-	cout << Player::printNumberOfPlayers() << endl;
-	Player * Play = new Player("asd",10, 100, 50);
-	cout << Play->printNumberOfPlayers() << endl;	
-	delete Play;
-	cout << Player::printNumberOfPlayers() << endl;
+	//konstruktory
+	Potion * potion = new Potion("normalnyPotion");
+	cout << endl;
+	StrengthPotion * StrPotion = new StrengthPotion("StrPotion",10);
+	cout << endl;
+	HealthPotion * HPotion = new HealthPotion("HPotion", 10);
+	cout << endl;
+
+	Potion * testpotion = potion;
+	Potion * testpotionStr = StrPotion;
+	Potion * testpotionHP = HPotion;
+
+	//9
+	potion->printPotionType();
+	StrPotion->printPotionType();
+	HPotion->printPotionType();
+
+	cout << endl;
+
+	//10 & 11
+	testpotion->printPotionType();
+	testpotionStr->printPotionType();
+	testpotionHP->printPotionType();
+
+	cout << endl;
+
+	//destruktory
+	delete potion;
+	cout << endl;
+	delete StrPotion;
+	cout << endl;
+	delete HPotion;
 
 	int aasdasd;
 	cin >> aasdasd;
