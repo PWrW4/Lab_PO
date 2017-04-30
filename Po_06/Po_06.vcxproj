@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bow.cpp" />
+    <ClCompile Include="Fist.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -26,6 +28,8 @@
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bow.h" />
+    <ClInclude Include="Fist.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />

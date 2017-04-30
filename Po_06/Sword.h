@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Weapon.h"
-#include "Header.h"
 
 class Sword  : virtual public Weapon
 {

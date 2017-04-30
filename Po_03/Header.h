@@ -9,8 +9,10 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-enum class MonsterType
-{
-	Ghost,
-	Dragon,
-};
+
+//odkomentowac
+//enum class MonsterType
+//{
+//	Ghost,
+//	Dragon,
+//};
