@@ -36,7 +36,7 @@ public:
 
 	void Player::print(const Player& player);
 
-	static int printNumberOfPlayers();
+	//static int printNumberOfPlayers();
 
 	void addPotion(const Potion &potion);
 

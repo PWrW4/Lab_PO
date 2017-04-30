@@ -75,10 +75,61 @@ void Player::print(const Player& player)
 	cout << "zycie : " << player.health << endl << endl;
 }
 
-int Player::printNumberOfPlayers()
+void Player::addPotion(const Potion& potion)
 {
-	return Player::numberOf;
-
+	potions.push_back(potion);
 }
+
+void Player::printPotions()
+{
+	for (Potion potion : potions)
+	{
+		cout << potion.getName() << endl;
+	}
+}
+
+void Player::drink(const Potion& _potion)
+{
+
+	for (std::vector<Potion>::iterator it = potions.begin(); it != potions.end();)
+	{
+		if (*it == _potion)
+		{
+			it = potions.erase(it);
+		}
+		it++;
+	}
+	for (Potion potion : potions)
+	{
+		if (potion == _potion)
+		{
+			
+		}
+	}
+}
+
+void Player::addItem(const Item& item)
+{
+	items.push_back(item);
+}
+
+void Player::printItems()
+{
+	for (Potion potion : potions)
+	{
+		cout << potion.getName() << endl;
+	}
+}
+
+void Player::equip(const Item& item)
+{
+	
+}
+
+//int Player::printNumberOfPlayers()
+//{
+//	return Player::numberOf;
+//
+//}
 
 
