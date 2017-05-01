@@ -11,10 +11,12 @@ class Player
 	int attack;
 	double health;
 	int magic;
+
+
+public:
 	std::vector<Item> items;
 	std::vector<Potion> potions;
 
-public:
 	static int numberOf;
 
 	Player();

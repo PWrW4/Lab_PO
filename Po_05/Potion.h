@@ -12,7 +12,7 @@ public:
 
 	Potion(const Potion &other);
 
-	virtual const string getName() const;
+	virtual string getName() const;
 
 	virtual void printPotionType();
 };

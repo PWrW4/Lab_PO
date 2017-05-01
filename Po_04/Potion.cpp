@@ -26,7 +26,7 @@ bool Potion::operator==(const Potion & potion) {
 }*/
 
 
-const std::string Potion::getName() const
+string Potion::getName() const
 {
 	return name;
 }

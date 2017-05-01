@@ -11,4 +11,12 @@ public:
 	Item(const Item &);
 
 	const string getName() const;
+
+	void setEquiped(bool eq);
+
+	bool getEquiped() const;
+
+	bool operator==(const Item & potion);
+
+	string IsEqqiped() const;
 };

@@ -95,16 +95,10 @@ void Player::drink(const Potion& _potion)
 	{
 		if (*it == _potion)
 		{
+			cout << it->getName() << "drinked" << endl;
 			it = potions.erase(it);
 		}
 		it++;
-	}
-	for (Potion potion : potions)
-	{
-		if (potion == _potion)
-		{
-			
-		}
 	}
 }
 
@@ -115,15 +109,30 @@ void Player::addItem(const Item& item)
 
 void Player::printItems()
 {
-	for (Potion potion : potions)
+	cout << endl;
+	for (Item _item : items)
 	{
-		cout << potion.getName() << endl;
+		cout << _item.getName() << " " <<_item.IsEqqiped() <<endl;
 	}
+	cout << endl;
 }
 
-void Player::equip(const Item& item)
+void Player::equip(const Item& _item)
 {
-	
+	for (std::vector<Item>::iterator it = items.begin(); it != items.end();)
+	{
+		if (*it == _item)
+		{
+			cout << it->getName() << "just equiped" << endl;
+			it->setEquiped(true);
+		}
+		else
+		{
+			cout << it->getName() << " diseq" << endl;
+			it->setEquiped(false);
+		}
+		it++;
+	}
 }
 
 //int Player::printNumberOfPlayers()
