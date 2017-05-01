@@ -11,8 +11,11 @@ class Player {
     int mana;
     int defence;
     double health;
+	Weapon * weapon;
 public:
-    // constructors and destructors
+    
+
+	// constructors and destructors
     Player(const std::string &name, int strength, int mana, int defence, double health);
 
     virtual ~Player();
@@ -24,6 +27,10 @@ public:
 
     // getters and setters
     const std::string &getName() const;
+
+	void setWeapon(Weapon * w);
+
+	Weapon getWeapon();
 
     void setName(const std::string &name);
 

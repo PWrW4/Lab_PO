@@ -178,5 +178,9 @@ void Monster::setDefence(int defence) {
 }
 
 void Monster::attack(Player &player) {
-    //TODO: implement
+	int monsterDamage = strength - player.getDefence();
+	if (monsterDamage>0)
+	{
+		player.setHealth(player.getHealth() - monsterDamage);
+	}	
 }

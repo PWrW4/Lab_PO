@@ -10,6 +10,6 @@ public:
 
 	StrengthPotion(const string _name, const int _usageTime);
 
-	void printPotionType();
+	void printPotionType() override;
 
 };

@@ -18,7 +18,7 @@ Potion::Potion(const Potion &other)
 }
 
 
-const string Potion::getName() const
+string Potion::getName() const
 {
 	return name;
 }

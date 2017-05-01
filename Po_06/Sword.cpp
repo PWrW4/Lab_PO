@@ -1,12 +1,22 @@
 ﻿#include "Sword.h"
-#include "Header.h"
+
+
+Sword::Sword(string name_string) : Weapon(name_string)
+{
+}
+
+
+int Sword::getAdditionalDamage()
+{
+	return 4;
+}
+
 
 int Sword::getDamage(int playerStrength, Monster& monster)
 {
-	if (true/*monster.getType()*/)
+	if (MonsterType::DRAGON == monster.getType())
 	{
-	MonsterType:Dragon;
-		playerStrength += 10;
+		return 0;
 	}
-	return playerStrength;
+	return getAdditionalDamage() + playerStrength - monster.getDefence();
 }

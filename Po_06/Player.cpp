@@ -37,6 +37,16 @@ const string &Player::getName() const {
     return name;
 }
 
+void Player::setWeapon(Weapon * w)
+{
+	weapon =  w;
+}
+
+Weapon Player::getWeapon()
+{
+	return * weapon;
+}
+
 void Player::setName(const string &name) {
     Player::name = name;
 }
@@ -75,5 +85,9 @@ void Player::setDefence(int defence) {
 }
 
 void Player::attack(Monster &monster) {
-    //TODO: implement
+	int playerDamage = weapon->getDamage(strength, monster);
+	if (playerDamage>0)
+	{
+		monster.setHealth(monster.getHealth() - playerDamage);
+	}
 }

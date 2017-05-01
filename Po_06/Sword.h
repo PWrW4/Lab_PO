@@ -3,6 +3,9 @@
 
 class Sword  : virtual public Weapon
 {
+	int getAdditionalDamage() override;
 public:
-	int getDamage(int playerStrength, Monster & monster) override;	
+	Sword(string name_string);
+	
+	int getDamage(int playerStrength, Monster & monster) override;
 };

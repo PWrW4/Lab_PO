@@ -10,5 +10,5 @@ public:
 
 	HealthPotion(const string _name, const int _power);
 
-	void printPotionType();
+	void printPotionType() override;
 };
