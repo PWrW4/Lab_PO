@@ -7,24 +7,24 @@ import javafx.scene.paint.Color;
  * Created by wojtasiq on 02.06.2017.
  */
 public class Circle extends MyShape {
-    double R,R2;
+    int R,R2;
 
-    public Circle(int x, int y, int initShapeSize, int initShapeSize1) {
-        super(x,y);
+    public Circle(int x, int y, int initShapeSize, int initShapeSize1,int Vx,int Vy) {
+        super(x,y,Vx,Vy);
         R = initShapeSize;
         R2 = initShapeSize1;
     }
 
-    public double getR() {
+    public int getR() {
         return R;
     }
 
-    public void setR(double r) {
+    public void setR(int r) {
         R = r;
     }
 
-    public Circle(double _x, double _y, double _r){
-        super(_x, _y);
+    public Circle(int _x, int _y, int _r,int Vx, int Vy){
+        super(_x, _y,Vx,Vy);
         R = _r;
     }
 
@@ -37,7 +37,42 @@ public class Circle extends MyShape {
     }
 
     @Override
-    double surfaceArea() {
-        return (3.14*R*R);
+    int surfaceArea() {
+        return (R*R);
+    }
+
+    @Override
+    public void randomResize() {
+
+    }
+
+    @Override
+    public int getHeight() {
+        return R2*2;
+    }
+
+    @Override
+    public int getWidth() {
+        return (int) (R*2);
+    }
+
+    @Override
+    public int getBottomBoundary() {
+        return getY()-R2;
+    }
+
+    @Override
+    public int getTopBoundary() {
+        return getY()+R2;
+    }
+
+    @Override
+    public int getLeftBoundary() {
+        return getX()-R;
+    }
+
+    @Override
+    public int getRightBoundary() {
+        return getX()+R;
     }
 }

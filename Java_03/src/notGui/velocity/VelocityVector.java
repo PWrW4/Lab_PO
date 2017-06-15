@@ -1,4 +1,4 @@
-package laboratory.velocity;
+package notGui.velocity;
 
 /**
  * Created by wojtasiq on 09.06.2017.
@@ -6,7 +6,7 @@ package laboratory.velocity;
 public class VelocityVector {
     int VelocityX,VelocityY;
 
-    public VelocityVector(int x,int y){
+    public VelocityVector(int x, int y){
         VelocityX = x;
         VelocityY = y;
     }

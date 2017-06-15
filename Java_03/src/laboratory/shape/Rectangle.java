@@ -8,32 +8,32 @@ import javafx.scene.paint.Color;
  */
 public class Rectangle extends MyShape {
 
-    double lengthX,lengthY;
+    int lengthX,lengthY;
 
-    public Rectangle(int x, int y, int initShapeSize) {
-        super(x,y);
+    public Rectangle(int x, int y, int initShapeSize,int Vx,int Vy) {
+        super(x,y,Vx,Vy);
         lengthX = initShapeSize;
         lengthY = initShapeSize;
     }
 
-    public double getLengthX() {
+    public int getLengthX() {
         return lengthX;
     }
 
-    public double getLengthY() {
+    public int getLengthY() {
         return lengthY;
     }
 
-    public void setLengthX(double lengthX) {
+    public void setLengthX(int lengthX) {
         this.lengthX = lengthX;
     }
 
-    public void setLengthY(double lengthY) {
+    public void setLengthY(int lengthY) {
         this.lengthY = lengthY;
     }
 
-    public Rectangle(double _x,double _y,double _lx,double _ly){
-        super(_x, _y);
+    public Rectangle(int _x,int _y,int _lx,int _ly,int Vx,int Vy){
+        super(_x, _y,Vx,Vy);
         lengthX = _lx;
         lengthY = _ly;
     }
@@ -47,7 +47,42 @@ public class Rectangle extends MyShape {
     }
 
     @Override
-    double surfaceArea() {
+    int surfaceArea() {
         return lengthY*lengthX;
+    }
+
+    @Override
+    public void randomResize() {
+
+    }
+
+    @Override
+    public int getRightBoundary() {
+        return getX()+(getLengthX()/2);
+    }
+
+    @Override
+    public int getLeftBoundary() {
+        return getX()-(getLengthX()/2);
+    }
+
+    @Override
+    public int getTopBoundary() {
+        return getY()+(getLengthY()/2);
+    }
+
+    @Override
+    public int getBottomBoundary() {
+        return getY()-(getLengthY()/2);
+    }
+
+    @Override
+    public int getWidth() {
+        return getLengthX();
+    }
+
+    @Override
+    public int getHeight() {
+        return lengthY;
     }
 }

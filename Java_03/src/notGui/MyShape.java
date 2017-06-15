@@ -1,7 +1,7 @@
-package laboratory.shape;
+package notGui;
 
-import javafx.scene.canvas.GraphicsContext;
-import laboratory.velocity.VelocityVector;
+
+import notGui.velocity.VelocityVector;
 
 /**
  * @author plechowicz
@@ -9,7 +9,7 @@ import laboratory.velocity.VelocityVector;
  */
 public abstract class MyShape implements Drawable, Movable,Resizable {
 
-    private int x,y;
+    private int x, y;
 
     private VelocityVector VelocityVector;
 
@@ -33,30 +33,17 @@ public abstract class MyShape implements Drawable, Movable,Resizable {
         this.y = y;
     }
 
-    public MyShape(int _x, int _y,int Vx,int Vy){
+    public MyShape(int _x, int _y, int Vx, int Vy) {
         x = _x;
         y = _y;
-        VelocityVector = new VelocityVector(Vx,Vy);
+        VelocityVector = new VelocityVector(Vx, Vy);
     }
 
     @Override
     public void move(int x, int y) {
-        setX(x);
-        setY(y);
+        setX(x + VelocityVector.getVelocityX());
+        setY(y + VelocityVector.getVelocityY());
     }
 
-    abstract int surfaceArea();
-
-
-    public abstract int getLeftBoundary();
-
-    public abstract int getRightBoundary();
-
-    public abstract int getWidth();
-
-    public abstract int getBottomBoundary();
-
-    public abstract int getHeight();
-
-    public abstract int getTopBoundary();
+    abstract String surfaceArea();
 }

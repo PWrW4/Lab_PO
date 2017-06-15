@@ -24,16 +24,15 @@ public class ShapeFactory {
 	public MyShape generateShape() {
 		int x = random.nextInt(windowWidth - initShapeSize);
 		int y = random.nextInt(windowHeight - initShapeSize);
-//		switch (random.nextInt(4)) {
-//			case 0:
-//				return new MyCircle(x, y, initShapeSize);
-//			case 1:
-//				return new MyRectangle(x, y, initShapeSize, initShapeSize);
-//			case 2:
-//				return new MyOval(x, y, initShapeSize, initShapeSize);
-//			default:
-//				return new MySquare(x, y, initShapeSize);
-//		}
-		return null;
+		switch (random.nextInt(4)) {
+			case 0:
+				return new Circle(x, y, initShapeSize,1,1);
+			case 1:
+				return new Rectangle(x, y, initShapeSize, initShapeSize,1,1);
+			case 2:
+				return new Circle(x, y, initShapeSize, initShapeSize,1,1);
+			default:
+				return new Rectangle(x, y, initShapeSize,1,1);
+		}
 	}
 }
