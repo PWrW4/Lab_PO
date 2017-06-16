@@ -41,9 +41,15 @@ public abstract class MyShape implements Drawable, Movable,Resizable {
 
     @Override
     public void move(int x, int y) {
-        setX(x + VelocityVector.getVelocityX());
-        setY(y + VelocityVector.getVelocityY());
+        setX(x);
+        setY(y);
     }
+
+//    @Override
+//    public void moveByVector() {
+//        setX(x + VelocityVector.getVelocityX());
+//        setY(y + VelocityVector.getVelocityY());
+//    }
 
     abstract String surfaceArea();
 }

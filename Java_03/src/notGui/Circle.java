@@ -2,6 +2,8 @@ package notGui;
 
 import javafx.scene.paint.Color;
 
+import java.util.Random;
+
 /**
  * Created by wojtasiq on 02.06.2017.
  */
@@ -26,14 +28,19 @@ public class Circle extends MyShape {
 
 
     public void draw(){
+        System.out.println("jestem kolem");
+    }
+
+    @Override
+    public void changeSize() {
+        Random random   = new Random();
+        //max powiekszenie 5x
+        R = random.nextInt(5)+1;
     }
 
     String surfaceArea() {
         return "Area  = pi*"+R*R;
     }
 
-    public void randomResize() {
-
-    }
 
 }

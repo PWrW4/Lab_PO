@@ -1,7 +1,8 @@
 package notGui;
 
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
+
+
+import java.util.Random;
 
 
 /**
@@ -35,8 +36,19 @@ public class Rectangle extends MyShape {
 
 
 
-    public void draw(GraphicsContext gc){
+    @Override
+    public void draw() {
+        System.out.println("jestem kwadratem");
+        System.out.println("X:"+getX());
+        System.out.println("Y:"+getY());
+    }
 
+    @Override
+    public void changeSize() {
+        Random random   = new Random();
+        //max powiekszenie 5x
+        lengthX = random.nextInt(5)+1;
+        lengthY = random.nextInt(5)+1;
     }
 
     @Override
@@ -44,9 +56,6 @@ public class Rectangle extends MyShape {
         return "Area = "+lengthY*lengthX;
     }
 
-    @Override
-    public void randomResize() {
 
-    }
 
 }

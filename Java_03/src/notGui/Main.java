@@ -5,7 +5,19 @@ package notGui;
  */
 public class Main {
     public static void main(String[] args) {
-        MyShape rysowalnyKwadrat = new Rectangle(4,5,10,15,1,1);
-        MyShape rysowalnyKolo = new Circle(4,5,10,15,1,1);
+        MyShape rysowalny = new Rectangle(4,5,10,15,1,1);
+
+
+        rysowalny.draw();
+
+        rysowalny.move(0,10);
+
+        rysowalny.draw();
+
+        Mover mover = new Mover();
+
+        mover.move(rysowalny, rysowalny.getVelocityVector());
+
+        rysowalny.draw();
     }
 }
